@@ -158,6 +158,6 @@ end
  else
     FilteredImg = reshape(output(:,1),[m n 1]);
  end
- disp('Time for Component Filtering Restoration =');
+ disp('Time for Adaptive Filtering Restoration =');
 %  toc;
  end
