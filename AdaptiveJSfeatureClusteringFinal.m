@@ -163,7 +163,11 @@ end
 end
 JSDF = [JSDF JSDtemp1];
 JSDF =  reshape(JSDF,m*n,[]);
-[idx,Cntrd] =  kmeans(JSDF,2);
+%[idx,Cntrd] =  kmeans(JSDF,2);
+% Perform fuzzy C-means clustering
+[Cntrd, U, ~] = fcm(JSDF, 2);
+% To get hard cluster assignments (like idx in kmeans):
+[~, idx] = max(U);  % idx will be 1xN vector of cluster indices
 % [idx,Cntrd] = kmedoids(JSDF,2);
 BW1 = idx == 1;
 % figure;
@@ -264,4 +268,5 @@ end
 % KLD = [KLD (sum(-p_x.*log2py_x) + sum(-p_y.*log2px_y))];
 % JSD = [JSD (sum(-p_x.*log2p_x_yx) + sum(-p_y.*log2p_x_yy))/2];
 % end
+
 % MeanMI = mean(MI)
