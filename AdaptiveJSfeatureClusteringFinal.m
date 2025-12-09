@@ -159,6 +159,7 @@ elseif (modelFlg == 1)
 %     JSDtemp2(pxl,:) = tempMD.*([(tempS)>mean(tempU)]);
 end
 end
+JSDF = [JSDF JSDtemp1];
 end
 end
 JSDF = [JSDF JSDtemp1];
@@ -270,3 +271,4 @@ end
 % end
 
 % MeanMI = mean(MI)
+
