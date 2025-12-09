@@ -162,7 +162,7 @@ end
 JSDF = [JSDF JSDtemp1];
 end
 end
-JSDF = [JSDF JSDtemp1];
+% JSDF = [JSDF JSDtemp1];
 JSDF =  reshape(JSDF,m*n,[]);
 %[idx,Cntrd] =  kmeans(JSDF,2);
 % Perform fuzzy C-means clustering
@@ -271,4 +271,5 @@ end
 % end
 
 % MeanMI = mean(MI)
+
 
